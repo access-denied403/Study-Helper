@@ -27,7 +27,6 @@ class Translator_App(object):
         tabControl.grid()
 
         self.speak_it = BooleanVar()
-        
         self.languages = {
             'Arabic': 'ar', 'Belarusian': 'be',
             'Bulgarian': 'bg', 'Bosnian': 'bs',
@@ -123,8 +122,8 @@ class Translator_App(object):
         word = self.translate_func(word, "en").text
         my_meaning = dictionary.meaning(word)
         try:
-            if my_meaning['Noun']: nouns.append(my_meaning['Noun'][0]) # else print("No Noun")
-            if my_meaning['Verb']: verbs.append(my_meaning['Verb'][0]) # else print("No Verb")
+            if my_meaning['Noun']: nouns.append(my_meaning['Noun'][0])
+            if my_meaning['Verb']: verbs.append(my_meaning['Verb'][0])
         except:
             nouns.append("No Data")
             verbs.append("No Data")
@@ -152,8 +151,8 @@ if __name__ == '__main__':
     root = Tk()
     root.title("Translator")
     root.geometry("350x430")
-    icon = PhotoImage(file='icon.png')
-    root.iconphoto(False, icon)
+    # icon = PhotoImage(file='icon.png')
+    # root.iconphoto(False, icon)
     Translator_App(root)
     root.mainloop()
 
